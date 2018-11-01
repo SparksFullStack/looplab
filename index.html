@@ -13,7 +13,7 @@
   <title>Bootstrap Theme</title>
 </head>
 
-<body>
+<body data-spy='scroll' data-target='#main-nav' id='home'>
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" id="main-nav">
     <div class="container">
       <a href="index.html" class="navbar-brand">LoopLAB</a>
@@ -113,7 +113,7 @@
 <!-- * Explore Section -->
 
 <!-- ** Explore Head -->
-<section id="expore-head-section">
+<section id="explore-head-section">
   <div class="container">
     <div class="row">
       <div class="col text-center py-5">
@@ -340,6 +340,24 @@
   <script>
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
+
+    // initializing Scrollspy
+    $('body').scrollspy({ target: '#main-nav' });
+
+    // Starting the Smooth Scrolling
+    $('#main-nav a').on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+
+        const hash = this.hash;
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash;
+        })
+      }
+    })
   </script>
 </body>
 
