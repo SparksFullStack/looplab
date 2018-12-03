@@ -1,2 +1,2 @@
 # looplab
-Theme I developed using Bootstrap and jQuery
+A theme for a fictional company I made using HTML, CSS, Bootstrap, and jQuery.
